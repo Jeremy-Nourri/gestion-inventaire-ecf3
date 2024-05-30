@@ -14,17 +14,14 @@ import java.util.List;
 public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @ManyToOne
-    private Clothing clothing;
+    private int id;
 
     @ManyToOne
     private Customer customer;
 
     private StateSale stateSale;
 
-    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SaleLine> saleLines;
 
 }

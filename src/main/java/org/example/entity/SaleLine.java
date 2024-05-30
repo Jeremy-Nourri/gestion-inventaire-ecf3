@@ -8,15 +8,22 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 
+@Table(name = "sale_line")
 @Entity
 public class SaleLine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private int quantity;
-    private double price;
+
     private double total;
 
     @ManyToOne
+    @JoinColumn(name = "clothing_id")
+    private Clothing clothing;
+
+    @ManyToOne
+    @JoinColumn(name = "sale_id")
     private Sale sale;
 }

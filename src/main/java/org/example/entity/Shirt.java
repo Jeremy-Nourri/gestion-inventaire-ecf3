@@ -1,9 +1,9 @@
 package org.example.entity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 

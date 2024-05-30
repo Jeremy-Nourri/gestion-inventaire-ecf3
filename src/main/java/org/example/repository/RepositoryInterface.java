@@ -1,4 +1,4 @@
-package org.example.interfaces;
+package org.example.repository;
 
 import java.util.List;
 

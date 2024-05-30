@@ -4,7 +4,10 @@
         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <mapping class="org.example.entity.C" />
+        <mapping class="org.example.entity.Clothing"/>
+        <mapping class="org.example.entity.Customer"/>
+        <mapping class="org.example.entity.Sale"/>
+        <mapping class="org.example.entity.SaleLine"/>
 
     </session-factory>
 </hibernate-configuration>

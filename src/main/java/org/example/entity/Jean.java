@@ -1,11 +1,11 @@
 package org.example.entity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 
 public class Jean extends Clothing {
     private String coupe;
