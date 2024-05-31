@@ -15,7 +15,7 @@ import javax.persistence.*;
 
 public class Clothing {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Enumerated(EnumType.STRING)
     private Categorie categorie;
@@ -23,7 +23,4 @@ public class Clothing {
     private String size;
     private double price;
     private int stock;
-
-
-
 }

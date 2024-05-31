@@ -1,7 +1,9 @@
 package org.example.service;
 
+import org.example.entity.Customer;
 import org.example.entity.Sale;
 import org.example.entity.SaleLine;
+import org.example.entity.StateSale;
 import org.example.repository.RepositoryInterface;
 
 import java.util.List;
@@ -88,6 +90,19 @@ public class SaleService extends BaseService implements RepositoryInterface<Sale
         session.close();
         return result;
     }
+
+    public void updateStateSale(int id, StateSale state){
+        Sale sale = findById(id);
+        sale.registerObserver(sale.getCustomer());
+        session = sessionFactory.openSession();
+        session.beginTransaction();
+        sale.setStateSale(state);
+        sale.notifyObservers();
+        session.update(sale);
+        session.getTransaction().commit();
+        session.close();
+    }
+
     public void close(){
         sessionFactory.close();
     }

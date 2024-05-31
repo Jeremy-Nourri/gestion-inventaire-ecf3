@@ -67,12 +67,14 @@ public class IhmSale {
 
         Sale sale = Sale.builder()
                 .customer(customer)
-                .stateSale(StateSale.INPROGRESS)
                 .build();
 
         int idSale = saleService.createAndReturnId(sale);
 
+        saleService.updateStateSale(idSale, StateSale.INPROGRESS);
+
         String answer;
+
         do {
             Clothing clothing = null;
 
@@ -105,8 +107,6 @@ public class IhmSale {
                     .sale(sale)
                     .build();
 
-            saleLineService.create(saleLine);
-
             saleService.addSaleLine(idSale, saleLine);
 
             System.out.println("Voulez-vous ajouter un autre vêtement ? (O/N)");
@@ -114,9 +114,9 @@ public class IhmSale {
 
         } while (answer.equalsIgnoreCase("O"));
 
-
-
         System.out.println("Vente enregistrée");
+
+        saleService.updateStateSale(idSale, StateSale.FINALIZED);
 
     }
 }

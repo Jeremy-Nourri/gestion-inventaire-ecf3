@@ -35,18 +35,6 @@ public class Ihm {
 
         System.out.println("[3] Gérer les clients");
 
-//        System.out.println("[2] Calculer le prix moyen des produits.");
-//
-//        System.out.println("[3] Récupérer la liste des produits d'une marque choisie.");
-//
-//        System.out.println("[4] Supprimer les produits d'une marque choisie de la table produit.");
-//
-//        System.out.println("[5] Ajouter une image à un produit.");
-//
-//        System.out.println("[6] Ajouter un commentaire à un produit.");
-//
-//        System.out.println("[7] Afficher les produits ave une note min.");
-
         System.out.println("[0] Quitter");
 
         System.out.println("Votre choix :");
